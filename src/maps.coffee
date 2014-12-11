@@ -11,6 +11,7 @@ module.exports = (robot) ->
     origin      = msg.match[3]
     destination = msg.match[4]
     key         = process.env.HUBOT_GOOGLE_API_KEY
+    logger      = robot.logger
 
     if origin == destination
       return msg.send "Now you're just being silly."
@@ -30,6 +31,8 @@ module.exports = (robot) ->
 
     robot.http(url).query(query).get()((err, res, body) ->
       jsonBody = JSON.parse(body)
+      logger.debug body
+      logger.debug jsonBody
       route = jsonBody.routes[0]
       if !route
         msg.send "Error: No route found."
