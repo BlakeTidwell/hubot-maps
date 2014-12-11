@@ -6,7 +6,7 @@
   "license": "MIT",
   "keywords": [
     "hubot",
-    "hubot-scripts"
+    "hubot-scripts",
     "google",
     "maps",
     "directions"
@@ -29,5 +29,5 @@
 
   "peerDependencies": {
     "hubot": "2.x"
-  },
+  }
 }
